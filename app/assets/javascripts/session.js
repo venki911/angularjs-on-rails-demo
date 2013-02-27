@@ -9,3 +9,5 @@ function SessionCtrl($scope) {
     $scope.nickName = $scope.nickNameText;
   }
 }
+
+SessionCtrl.$inject = ['$scope'];
