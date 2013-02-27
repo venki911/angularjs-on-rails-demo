@@ -24,4 +24,7 @@ Foobar::Application.configure do
 
   # Debug mode disables concatenation and preprocessing of assets.
   config.assets.debug = true
+
+  # Initialize environment before precompile (necessary for js-routes)
+  config.assets.initialize_on_precompile = true
 end

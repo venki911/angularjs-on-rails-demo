@@ -29,6 +29,9 @@ Foobar::Application.configure do
   # Whether to fallback to assets pipeline if a precompiled asset is missed.
   config.assets.compile = true
 
+  # Initialize environment before precompile (necessary for js-routes)
+  config.assets.initialize_on_precompile = true
+
   # Generate digests for assets URLs.
   config.assets.digest = true
 

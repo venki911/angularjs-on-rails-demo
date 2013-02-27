@@ -23,6 +23,8 @@ group :development, :test do
   gem 'pry'
 end
 
+gem 'js-routes'
+
 gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
