@@ -1,0 +1,16 @@
+<!doctype html>
+<html ng-app>
+ <head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.min.js"></script>
+  <%= javascript_include_tag :application %>
+ </head>
+ <body>
+  <div ng-controller="SessionCtrl">
+   <form name="joinForm" ng-submit="logIn()" ng-show="!loggedIn()">
+    <input type="text" ng-model="nickNameText" placeholder="Enter a nickname" />
+    <input type="submit" value="join" />
+   </form>
+   <h1 ng-show="loggedIn()">Hello {{nickName}}!</h1>
+  </div>
+ </body>
+</html>
