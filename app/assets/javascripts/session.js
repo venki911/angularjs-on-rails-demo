@@ -7,7 +7,7 @@ function SessionCtrl($scope, $timeout, Session) {
   }
 
   $scope.logIn = function() {
-    Session.create({ nick: $scope.nickNameText }, function(response) {
+    Session.save({ nick: $scope.nickNameText }, function(response) {
       if (response.success) {
         $scope.nickName = $scope.nickNameText;
       }
@@ -40,7 +40,7 @@ SessionCtrl.$inject = ["$scope", "$timeout", "Session"];
 var session_module = angular.module("session", ['ngResource']);
 
 session_module.factory("Session", ["$resource", function($resource) {
-  var Session = $resource(Routes.sessions_path(), {}, { create: { method: "POST" } });
+  var Session = $resource(Routes.sessions_path());
 
   return Session;
 }]);
