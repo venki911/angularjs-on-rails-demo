@@ -1,4 +1,4 @@
-var chatter_module = angular.module("chatter", ["ng"]);
+var chatter_module = angular.module("chatter", ["ng", "session"]);
 
 chatter_module.config(function($routeProvider, $httpProvider) {
   $routeProvider.when("/", { controller: SessionCtrl, templateUrl: "assets/sessions/new.html" });
