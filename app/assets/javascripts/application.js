@@ -11,4 +11,5 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //=require 'js-routes'
+//=require 'chatter.js'
 //=require 'session.js'

@@ -27,4 +27,7 @@ Foobar::Application.configure do
 
   # Initialize environment before precompile (necessary for js-routes)
   config.assets.initialize_on_precompile = true
+
+  # Register AngularJS template path in asset pipeline
+  config.assets.paths << File.join(Rails.root, 'app', 'assets', 'layouts')
 end

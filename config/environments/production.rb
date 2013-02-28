@@ -80,4 +80,7 @@ Foobar::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+
+  # Register AngularJS template path in asset pipeline
+  config.assets.paths << File.join(Rails.root, 'app', 'assets', 'layouts')
 end
