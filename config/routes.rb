@@ -5,7 +5,7 @@ Foobar::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root to: 'welcome#index'
 
-  resources :sessions, only: :create
+  resources :sessions, only: [:create, :index]
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

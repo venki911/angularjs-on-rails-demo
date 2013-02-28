@@ -2,4 +2,13 @@
  <input type="text" ng-model="nickNameText" placeholder="Enter a nickname" />
  <input type="submit" value="join" />
 </form>
-<h1 ng-show="loggedIn()">Hello {{nickName}}!</h1>
+<h1 ng-show="loggedIn()">Your nickname is: {{nickName}}!</h1>
+<hr> 
+<div>
+ Members:
+ <ul>
+  <li ng-repeat="nick in nickNames">
+    {{nick.nick}}
+  </li>
+ <ul>
+</div>

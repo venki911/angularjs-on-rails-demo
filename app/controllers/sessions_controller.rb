@@ -1,9 +1,21 @@
 class SessionsController < ApplicationController
-  before_filter :ensure_not_joined
+  before_filter :ensure_not_joined, only: :create
+
+  respond_to :json
+
+  @@nicknames = []
+
+  def index
+    respond_with @@nicknames.sort.map { |n| { nick: n } }
+  end
 
   def create
-    success = params[:nick].present?
-    session[:nick] = params[:nick]
+    success = params[:nick].present? && !@@nicknames.include?(params[:nick])
+
+    if success
+      session[:nick] = params[:nick]
+      @@nicknames << params[:nick]
+    end
 
     respond_to do |format|
       format.json { render json: { success: success }, status: 200 }

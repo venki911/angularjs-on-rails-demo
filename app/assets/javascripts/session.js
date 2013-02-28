@@ -1,5 +1,6 @@
-function SessionCtrl($scope, Session) {
+function SessionCtrl($scope, $timeout, Session) {
   $scope.nickName = null;
+  $scope.nickNames = [];
 
   $scope.loggedIn = function() {
     return $scope.nickName !== null;
@@ -12,9 +13,21 @@ function SessionCtrl($scope, Session) {
       }
     });
   }
+
+  $scope.getNicks = function() {
+    var nicks = Session.query(function() {
+      if ($scope.nickNames.length !== nicks.length) {
+        $scope.nickNames = nicks;
+      }
+
+      $timeout($scope.getNicks);
+    })
+  }
+
+  $scope.getNicks();
 }
 
-SessionCtrl.$inject = ["$scope", "Session"];
+SessionCtrl.$inject = ["$scope", "$timeout", "Session"];
 
 var session_module = angular.module("session", ['ngResource']);
 
