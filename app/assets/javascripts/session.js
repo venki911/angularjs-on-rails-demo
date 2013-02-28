@@ -24,6 +24,14 @@ function SessionCtrl($scope, $timeout, Session) {
     })
   }
 
+  $scope.isMe = function(nick) {
+    return $scope.nickName == nick.nick;
+  }
+
+  $scope.memberCount = function() {
+    return $scope.nickNames.length;
+  }
+
   $scope.getNicks();
 }
 
