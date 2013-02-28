@@ -1,4 +1,4 @@
-function SessionCtrl($scope, $timeout, Session) {
+function SessionCtrl($scope, $timeout, $cookies, $cookieStore, Session) {
   $scope.nickName = null;
   $scope.nickNames = [];
 
@@ -32,10 +32,10 @@ function SessionCtrl($scope, $timeout, Session) {
     return $scope.nickNames.length;
   }
 
-  $scope.getNicks();
+  //$scope.getNicks();
 }
 
-SessionCtrl.$inject = ["$scope", "$timeout", "Session"];
+//SessionCtrl.$inject = ["$scope", "$timeout", "Session"];
 
 var session_module = angular.module("session", ['ngResource']);
 

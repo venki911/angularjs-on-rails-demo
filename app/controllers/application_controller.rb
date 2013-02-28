@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   private
   def intercept_html_requests
+    Rails.logger.debug("\n\nsession is: #{session.inspect} \n\n")
     render('layouts/angular') if request.format == Mime::HTML
   end
 end
