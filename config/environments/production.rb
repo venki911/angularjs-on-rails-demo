@@ -82,5 +82,5 @@ Foobar::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
 
   # Register AngularJS template path in asset pipeline
-  config.assets.paths << File.join(Rails.root, 'app', 'assets', 'layouts')
+  config.assets.paths << File.join(Rails.root, 'app', 'assets', 'templates')
 end
