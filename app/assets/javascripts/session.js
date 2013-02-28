@@ -31,8 +31,8 @@ SessionCtrl.$inject = ["$scope", "$timeout", "Session"];
 
 var session_module = angular.module("session", ['ngResource']);
 
-session_module.factory("Session", function($resource) {
+session_module.factory("Session", ["$resource", function($resource) {
   var Session = $resource(Routes.sessions_path(), {}, { create: { method: "POST" } });
 
   return Session;
-});
+}]);
