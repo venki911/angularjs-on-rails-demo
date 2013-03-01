@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
     if success
       session[:nick] = params[:nick]
       @@nicknames << params[:nick]
+      Channel.find("main").join(params[:nick])
     end
 
     respond_to do |format|

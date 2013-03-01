@@ -2,17 +2,3 @@
  <input type="text" ng-model="nickNameText" placeholder="Enter a nickname" />
  <input type="submit" value="join" />
 </form>
-<hr ng-hide="loggedIn()"> 
-<div ng-show="memberCount() > 0">
- Members:
- <ul>
-  <li ng-repeat="nick in nickNames">
-   <span class="{{isMe(nick) && 'nick-me' || ''}}">
-    {{nick.nick}}
-   </span>
-  </li>
- <ul>
-</div>
-<div ng-show="memberCount() == 0">
- No members in chat.
-</div>

@@ -13,3 +13,4 @@
 //=require 'js-routes'
 //=require 'chatter.js'
 //=require 'session.js'
+//=require 'channel.js'

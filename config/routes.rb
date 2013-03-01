@@ -7,6 +7,8 @@ Foobar::Application.routes.draw do
 
   resources :sessions, only: [:create, :index]
 
+  resources :channels, only: [:show, :update]
+
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
